@@ -172,3 +172,4 @@ sys.vendor.qti.servicetracker.disable=true
 ro.havoc.device.name=Asus Zenfone 7
 ro.havoc.group.url=https://t.me/havoc_i002d
 ro.havoc.maintainer=Raileanu Cosmin (Comico)
+ro.havoc.maintainer.username=ComicoX
