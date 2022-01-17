@@ -29,7 +29,7 @@ TARGET_BOOTANIMATION_SIZE := 1080p
 $(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_BRAND := asus
+PRODUCT_BRAND := Asus
 PRODUCT_DEVICE := I002D
 PRODUCT_MANUFACTURER := asus
 PRODUCT_MODEL := ASUS_I002D
