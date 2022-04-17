@@ -17,9 +17,8 @@
 
 set -e
 
-# Required!
-export DEVICE=I002D
-export VENDOR=asus
+DEVICE=I002D
+VENDOR=asus
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -34,27 +33,33 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-if [ $# -eq 0 ]; then
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -p | --path )           shift
+                                SRC=$1
+                                ;;
+        -s | --section )        shift
+                                SECTION=$1
+                                CLEAN_VENDOR=false
+                                ;;
+        -n | --no-cleanup )     CLEAN_VENDOR=false
+                                ;;
+    esac
+    shift
+done
+
+if [ -z "$SRC" ]; then
     SRC=adb
-else
-    if [ $# -eq 1 ]; then
-        SRC=$1
-    else
-        echo "$0: bad number of arguments"
-        echo ""
-        echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
-        echo ""
-        echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
-        echo "the device using adb pull."
-        exit 1
-    fi
 fi
 
 function blob_fixup() {
     case "${1}" in
     # Fix xml version
     system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
-        sed -i 's|product|system_ext|g' "${2}"
+        sed -i 's|system/product|system_ext|g' "${2}"
         sed -i 's|xml version="2.0"|xml version="1.0"|g' "${2}"
         ;;
     esac
@@ -66,7 +71,7 @@ setup_vendor "$DEVICE" "$VENDOR" "$HAVOC_ROOT" false "$CLEAN_VENDOR"
 extract "$MY_DIR"/proprietary-files-product.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
-export DEVICE_BRINGUP_YEAR=2020
+extract "$MY_DIR"/proprietary-files-vendor.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files-odm.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
-

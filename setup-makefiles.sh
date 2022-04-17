@@ -18,8 +18,8 @@
 set -e
 
 # Required!
-export DEVICE=I002D
-export VENDOR=asus
+DEVICE=I002D
+VENDOR=asus
 
 export DEVICE_BRINGUP_YEAR=2020
 
@@ -47,6 +47,15 @@ write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 write_makefiles "${MY_DIR}/proprietary-files-product.txt" true
 
+write_makefiles "$MY_DIR"/proprietary-files-vendor.txt
+write_makefiles "$MY_DIR"/proprietary-files-odm.txt
+
 # Finish
+
+cat << EOF >> "$ANDROIDMK"
+
+EOF
+
+# We are done!
 write_footers
 
