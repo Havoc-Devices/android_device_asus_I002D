@@ -227,5 +227,30 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# Additional tools
+PRODUCT_PACKAGES += \
+    dump.exfat \
+    fsck.exfat \
+    exfatlabel \
+    mkfs.exfat \
+    tune.exfat \
+    e2fsck \
+    fsck.exfat \
+    lsof \
+    mke2fs \
+    mkfs.exfat \
+    openvpn \
+    tune2fs \
+    mkfs.ntfs \
+    mount.ntfs \
+    fsck.ntfs \
+    mkshrc_vendor \
+    toybox_vendor \
+    sh_vendor \
+    vim \
+    vncflinger \
+    vncpasswd \
+    SystemWebView
+
 # Inherit from vendor blobs
 $(call inherit-product, vendor/asus/I002D/I002D-vendor.mk)
