@@ -139,7 +139,7 @@ system_ext/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 system_ext/lib64/libsecureuisvc_jni.so
 system_ext/lib64/libsecureui_svcsock_system.so
 system_ext/lib64/vendor.qti.hardware.tui_comm@1.0.so
-system_ext/lib64/libcryptfs_hw.so
+#system_ext/lib64/libcryptfs_hw.so
 
 # System Helper
 -system_ext/app/com.qualcomm.qti.services.systemhelper/com.qualcomm.qti.services.systemhelper.apk
@@ -160,27 +160,27 @@ system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.0-service.rc
 system_ext/bin/bt_logger
 system_ext/bin/diag_callback_sample_system
 system_ext/bin/diag_dci_sample_system
-#system_ext/bin/dpmd
+system_ext/bin/dpmd
 system_ext/bin/dun-server
 system_ext/bin/perfservice
 system_ext/bin/qccsyshalservice
 system_ext/bin/qspmsvc
 system_ext/bin/qvrdatalogger
-#system_ext/bin/qvrservice
+system_ext/bin/qvrservice
 system_ext/bin/qvrservicetest
 system_ext/bin/qvrservicetest64
 system_ext/bin/rtspclient
 system_ext/bin/rtspserver
-#system_ext/bin/sigma_miracasthalservice
+system_ext/bin/sigma_miracasthalservice
 system_ext/bin/test_diag_system
-#system_ext/bin/wfdservice
+system_ext/bin/wfdservice
 
-system_ext/etc/bluetooth/interop_database.conf
+#system_ext/etc/bluetooth/interop_database.conf
 #system_ext/etc/bluetooth/bt_configstore.conf
-system_ext/etc/bluetooth/bt_profile.conf
+#system_ext/etc/bluetooth/bt_profile.conf
 
-#system_ext/etc/seccomp_policy/qvr@2.0.policy
-#system_ext/etc/seccomp_policy/wfdservice.policy
+system_ext/etc/seccomp_policy/qvr@2.0.policy
+system_ext/etc/seccomp_policy/wfdservice.policy
 system_ext/etc/seccomp_policy/perfservice.policy
 
 system_ext/etc/permissions/com.qti.media.secureprocessor.xml
@@ -206,8 +206,8 @@ product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
 
 product/etc/sysconfig/GoogleCellBroadcast_config.xml
 product/etc/sysconfig/google-hiddenapi-package-allowlist.xml
-product/etc/sysconfig/google-rollback-package-whitelist.xml
-product/etc/sysconfig/google-staged-installer-whitelist.xml
+##product/etc/sysconfig/google-rollback-package-whitelist.xml
+##product/etc/sysconfig/google-staged-installer-whitelist.xml
 
 system_ext/lib/vendor.qti.hardware.qccsyshal@1.0-halimpl.so
 system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0-halimpl.so

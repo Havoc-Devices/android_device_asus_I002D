@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+#           (C) 2018 The Omnirom Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,13 +21,13 @@ set -e
 DEVICE=I002D
 VENDOR=asus
 
-# Load extract_utils and do some sanity checks
+# Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-HAVOC_ROOT="$MY_DIR"/../../..
+CM_ROOT="$MY_DIR"/../../..
 
-HELPER="${HAVOC_ROOT}/tools/extract-utils/extract_utils.sh"
+HELPER="${CM_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -66,7 +67,7 @@ function blob_fixup() {
 }
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$HAVOC_ROOT" false "$CLEAN_VENDOR"
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files-product.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"

@@ -4,8 +4,8 @@
 -vendor/app/TimeService/TimeService.apk
 -vendor/app/com.qualcomm.qti.gpudrivers.kona.api30/com.qualcomm.qti.gpudrivers.kona.api30.apk
 -vendor/app/slaservice/slaservice.apk
-vendor/overlay/FrameworksResTarget.apk
-vendor/overlay/WifiResTarget.apk
+##vendor/overlay/FrameworksResTarget.apk
+##vendor/overlay/WifiResTarget.apk
 vendor/bin/ALSPS_sensor_module_number
 vendor/bin/Adapter_ADC
 vendor/bin/Asus2ndAccelSensor_cal
