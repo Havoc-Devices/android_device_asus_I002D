@@ -17,8 +17,6 @@
 BOARD_VENDOR := asus
 DEVICE_PATH := device/asus/I002D
 
-# Build
-BUILD_BROKEN_DUP_RULES := true
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
