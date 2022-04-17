@@ -175,6 +175,7 @@ PRODUCT_PACKAGES += \
 # Prebuilt
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/product,product) \
+    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/root,recovery/root) \
     $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system,system) \
     $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system_ext,system_ext)
 
